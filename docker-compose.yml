@@ -1,0 +1,9 @@
+services:
+  emailer:
+    build: .
+    ports:
+      - "5566:2266"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
