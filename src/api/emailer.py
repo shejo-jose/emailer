@@ -25,4 +25,4 @@ async def send_email_message(background_tasks: BackgroundTasks, email: str, subj
 async def job_status(job_id: str):
     status = get_status(job_id)
     logger.info(f"[API] Job {job_id} status requested: {status}")
-    return {"job_id": job_id, "status": stat}
+    return {"job_id": job_id, "status": status}

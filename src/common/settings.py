@@ -11,6 +11,7 @@ class Configurations(BaseSettings):
     api_prefix: str
     sender_email: str
     sender_password: str
+    emailer_url: str = "http://127.0.0.1:5566"
 
     model_config = SettingsConfigDict(
         env_prefix="", env_file=".env", env_file_encoding="utf-8", extra="allow"

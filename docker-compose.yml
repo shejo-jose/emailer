@@ -1,9 +1,25 @@
 services:
   emailer:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     ports:
       - "5566:2266"
     volumes:
       - .:/app
     env_file:
       - .env
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "5501:8501"
+    env_file:
+      - .env
+    environment:
+      - EMAILER_URL=http://emailer:2266
+    depends_on:
+      - emailer
