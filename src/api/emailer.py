@@ -1,5 +1,5 @@
 # emailer.py
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, HTTPException
 from src.core.emailer import send_email
 from src.util.job_utils import get_status, set_status
 import uuid
